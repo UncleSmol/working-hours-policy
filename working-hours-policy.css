@@ -1,0 +1,424 @@
+/* ==========================================================================
+   CSS Reset
+   ========================================================================== */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+/* Remove default margin and padding */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+blockquote,
+dl,
+dd {
+	margin: 0;
+}
+
+/* Set core body defaults */
+body {
+	min-height: 100vh;
+	scroll-behavior: smooth;
+	text-rendering: optimizeSpeed;
+	line-height: 1.5;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	width: 100vw;
+}
+
+/* Remove list styles */
+ul,
+ol {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+/* Set core root defaults */
+html:focus-within {
+	scroll-behavior: smooth;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+	max-width: 100%;
+	display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+	html:focus-within {
+		scroll-behavior: auto;
+	}
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}
+
+/* Remove default table spacing */
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Remove text decoration from links */
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+/* Remove default button styles */
+button {
+	background: none;
+	border: none;
+	padding: 0;
+	cursor: pointer;
+}
+
+/* Remove default fieldset styles */
+fieldset {
+	border: none;
+	padding: 0;
+	margin: 0;
+}
+
+/* Remove default quote styling */
+blockquote,
+q {
+	quotes: none;
+}
+
+/* Prevent text size adjustment on orientation change */
+html {
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	text-size-adjust: 100%;
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Remove default form element styling */
+input,
+textarea {
+	border: none;
+	outline: none;
+}
+
+/* Remove default select styling */
+select {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+/* Remove default search input styling */
+input[type='search'] {
+	-webkit-appearance: none;
+	appearance: none;
+}
+
+/* Remove default number input spinner */
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	appearance: none;
+	margin: 0;
+}
+
+/* ==========================================================================
+   Page Styles
+   ========================================================================== */
+
+/*background and page styling */
+body {
+	background-color: rgb(74, 74, 74);
+}
+
+.page {
+	width: 210mm;
+	height: 279mm;
+	margin: 20pt auto;
+	background-color: white;
+	box-shadow: 5px 5px 5px black;
+	padding: 1in;
+	overflow: auto;
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+}
+
+/*Header Styling and positioning*/
+.header {
+	display: flex;
+	justify-content: space-between;
+	margin-top: -0.8in; /*Positions header outside content margins*/
+	width: 100%;
+	gap: 3rem; /* Creates equal spacing between elements */
+}
+
+#company-logo,
+#villa-roma-header-address,
+#nkangala-icon {
+	flex: 1; /* Makes all divs take equal width */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	max-width: calc(100% / 3); /* Ensures exact third of the container */
+}
+
+/* Handle images within the containers */
+.header img {
+	max-width: 100%;
+	height: 4;
+	object-fit: cover; /* Maintains aspect ratio */
+}
+
+/*Section Breaker*/
+.section-breaker {
+	width: 100%;
+	height: 2px;
+	background-color: #ff0000;
+	margin: 15pt auto;
+}
+
+/*Title Section Positioning*/
+#title-section {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+/*Content Styling*/
+h2 {
+	font-size: 14pt;
+	margin-bottom: 4pt;
+}
+
+h3 {
+	font-size: 11pt;
+	margin-bottom: 2pt;
+}
+
+p {
+	font-size: 11pt;
+	text-align: justify;
+}
+
+li {
+	font-size: 11pt;
+	text-align: justify;
+	padding-left: 10px;
+	list-style: circle;
+	margin-left: 15px;
+}
+
+/* ==========================================================================
+   Mobile-Media Query
+   ========================================================================== */
+@media screen and (max-width: 480px) {
+	.section-breaker {
+		margin: 7pt auto;
+	}
+
+	.page {
+		width: 90%;
+		height: 90vh;
+		border-radius: 20px;
+		-webkit-border-radius: 20px;
+		-moz-border-radius: 20px;
+		-ms-border-radius: 20px;
+		-o-border-radius: 20px;
+		padding: 0.3in;
+	}
+
+	.header {
+		flex: 1;
+		margin-top: 0;
+		flex-direction: row;
+		gap: 1rem;
+	}
+
+	.header img {
+		width: 120px;
+	}
+
+	#villa-roma-header-address img {
+		max-width: 100%;
+		width: 100%;
+		height: 40px;
+		object-fit: contain;
+	}
+
+	#title-section {
+		width: 100%;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+	}
+
+	/*Content Heading Styling*/
+	h2 {
+		font-size: 13pt;
+		margin-bottom: 2pt;
+	}
+
+	h3 {
+		font-size: 10pt;
+		margin: 5pt auto;
+	}
+
+	p {
+		font-size: 10pt;
+		text-align: left;
+	}
+
+	li {
+		font-size: 10pt;
+		text-align: left;
+		padding-left: 5px;
+		list-style: circle;
+		margin-left: 16px;
+	}
+}
+
+/* First, let's fix the body scroll */
+body {
+	min-height: 100vh;
+	overflow-y: auto;
+	overflow-x: hidden;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 2rem;
+	padding: 2rem 0;
+	background-color: rgb(74, 74, 74);
+}
+
+/* Modify the page container */
+.page {
+	width: 210mm;
+	height: 279mm;
+	margin: 0 auto; /* Changed from 20pt auto */
+	background-color: white;
+	box-shadow: 5px 5px 5px black;
+	padding: 1in;
+	position: relative; /* Added */
+	overflow-y: visible; /* Changed from auto */
+	overflow-x: hidden;
+}
+
+/* For smooth scrolling */
+html {
+	scroll-behavior: smooth;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+/* For mobile */
+@media screen and (max-width: 480px) {
+	body {
+		padding: 1rem;
+		gap: 1rem;
+	}
+
+	.page {
+		width: 100%;
+		height: auto; /* Changed from 90vh */
+		min-height: 100vh;
+		margin: 0;
+		padding: 0.5in;
+	}
+}
+
+/* Hide scrollbars but keep functionality */
+.page::-webkit-scrollbar {
+	display: none;
+}
+
+body::-webkit-scrollbar {
+	width: 8px;
+}
+
+body::-webkit-scrollbar-track {
+	background: #333;
+}
+
+body::-webkit-scrollbar-thumb {
+	background: #666;
+	border-radius: 4px;
+}
+
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #ff0000;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(100px);
+    transition: all 0.3s ease;
+    z-index: 999;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+#back-to-top.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#back-to-top:hover {
+    background: #cc0000;
+    transform: translateY(-3px);
+}
+
+#back-to-top svg {
+    width: 20px;
+    height: 20px;
+}
+
+@media screen and (max-width: 480px) {
+    #back-to-top {
+        bottom: 15px;
+        right: 15px;
+        width: 35px;
+        height: 35px;
+    }
+}
